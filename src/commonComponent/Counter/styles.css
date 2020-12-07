@@ -1,0 +1,20 @@
+.minus, .reset, .plus {
+  margin-right: 20px
+}
+
+.number {
+  border: 1px solid rgb(63, 0, 180);
+  padding: 10px;
+  margin: 20px auto;
+  max-width: 30%;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 11%, rgba(255,255,255,1) 100%);
+  color: #ffffff;
+}
+
+.isEven {
+  border: 1px solid yellow;
+  margin: 10px auto;
+  max-width: 30%;
+  padding: 10px;
+  background: linear-gradient(90deg, rgba(36,34,0,1) 0%, rgba(236,255,0,1) 65%, rgba(255,255,255,1) 100%);
+}

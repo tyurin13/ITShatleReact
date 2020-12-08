@@ -16,21 +16,26 @@ class CounterContainer extends Component {
   }
 
   handlePlusOne = () => {
-    this.setState({ countValue: this.state.countValue + 1 })
+    this.setState({ countValue: this.state.countValue + 1 });
+    this.checkParity()
   }
 
   handleMinusOne = () => {
-    this.setState({ countValue: this.state.countValue - 1 })
+    this.setState({ countValue: this.state.countValue - 1 });
+    this.checkParity()
   }
 
   handleResetCounter = () => {
-    this.setState({ countValue: 0 })
+    this.setState({ countValue: 0 });
+    this.checkParity()
+  }
+
+  checkParity = () => {
+    const checkParityResult = this.state.countValue % 2 === 0 ? 'The number is odd' : 'The number is even';
+    this.setState({parityType: checkParityResult});
   }
 
   render() {
-
-    const checkParityResult = this.state.countValue % 2 === 0 ? 'The number is even' : 'The number is odd';
-    this.state.parityType = checkParityResult;
 
     return (
       <div className='wrapper'>

@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Container from './commonComponent/Container/Container'
+import CounterContainer from './commonComponent/CounterContainer/CounterContainer';
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Container />
+    <CounterContainer />
   </React.StrictMode>,
   document.getElementById('root')
 );

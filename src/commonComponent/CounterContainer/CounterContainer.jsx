@@ -1,47 +1,45 @@
 import React, { Component } from 'react';
+import Counter from '../Counter/Counter';
 import './styles.css';
-import Counter from '../Counter/Counter'
 
-class Container extends Component {
-
+class CounterContainer extends Component {
   constructor(props) {
-
     super(props);
 
     this.state = {
 
       countValue: 0,
       parityType: 'The number is even'
-    }
 
+    }
+    
   }
 
-  plusOne = () => {
+  handlePlusOne = () => {
     this.setState({ countValue: this.state.countValue + 1 })
   }
 
-  minusOne = () => {
+  handleMinusOne = () => {
     this.setState({ countValue: this.state.countValue - 1 })
   }
 
-  resetCounter = () => {
+  handleResetCounter = () => {
     this.setState({ countValue: 0 })
   }
 
-  checkParity = () => {
-    this.setState({ parityType: this.state.countValue % 2 === 0 ? 'The number is even' : 'The number is odd' })
-  }
-
   render() {
+
+    const checkParityResult = this.state.countValue % 2 === 0 ? 'The number is even' : 'The number is odd';
+    this.state.parityType = checkParityResult;
+
     return (
       <div className='wrapper'>
         <Counter
           countValue={this.state.countValue}
           parityType={this.state.parityType}
-          plusOne={this.plusOne}
-          minusOne={this.minusOne}
-          resetCounter={this.resetCounter}
-          checkParity={this.checkParity}
+          handlePlusOne={this.handlePlusOne}
+          handleMinusOne={this.handleMinusOne}
+          handleResetCounter={this.handleResetCounter}
         />
       </div>
     )
@@ -49,5 +47,5 @@ class Container extends Component {
 
 }
 
-export default Container
+export default CounterContainer
 
